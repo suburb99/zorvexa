@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#000000">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Zorvexa">
+<link rel="apple-touch-icon" href="icon-180.png">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Zorvexa – AI that builds</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='black'/><text x='50' y='72' font-size='64' font-family='sans-serif' font-weight='800' fill='white' text-anchor='middle'>Z</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="i-img" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="M21 16l-5-5-8 8"/></symbol><symbol id="i-note" viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6z"/><path d="M9 12h7M9 16h7"/></symbol><symbol id="i-hist" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></symbol><symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol><symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol><symbol id="i-key" viewBox="0 0 24 24"><circle cx="7.5" cy="16.5" r="4"/><path d="M10.8 13.2L20 4M16 8l3 3"/></symbol><symbol id="i-inv" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 4v16a8 8 0 0 0 0-16z" fill="currentColor"/></symbol><symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/></symbol><symbol id="i-code" viewBox="0 0 24 24"><path d="M8 8l-4 4 4 4M16 8l4 4-4 4M14 5l-4 14"/></symbol><symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol><symbol id="i-re" viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-2.3-5.7M20 4v5h-5"/></symbol><symbol id="i-ph" viewBox="0 0 24 24"><rect x="7" y="3" width="10" height="18" rx="2"/><path d="M11 18h2"/></symbol><symbol id="i-up" viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></symbol><symbol id="i-cp" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></symbol><symbol id="i-dl" viewBox="0 0 24 24"><path d="M12 4v11M7 11l5 5 5-5M5 20h14"/></symbol></svg>
+<div class="app">
+<aside id="side">
+  <div class="logo"><div class="mark">Z</div><div><b>Zorvexa</b><span>AI that builds.</span></div></div>
+  <button id="newp"><svg class="i"><use href="#i-plus"/></svg>New project</button>
+  <div class="lbl">Projects</div>
+  <div id="plist"></div>
+  <button class="btn" id="inst" style="display:none">Install app</button>
+  <div class="free">Free models through OpenRouter. Your key stays on this device.</div>
+</aside>
+<div class="scrim" id="scrim"></div>
+<div class="work">
+<header class="top">
+  <button class="ib" id="menu" aria-label="Projects"><svg class="i"><use href="#i-menu"/></svg></button>
+  <div id="ptitle"></div>
+  <div class="seg"><button data-t="codep"><svg class="i"><use href="#i-code"/></svg>Code</button><button data-t="prev"><svg class="i"><use href="#i-eye"/></svg>Preview</button></div>
+  <button class="ib" id="verb" aria-label="Version history"><svg class="i"><use href="#i-hist"/></svg></button><button class="ib" id="memb" aria-label="Project memory"><svg class="i"><use href="#i-note"/></svg></button><button class="ib" id="theme" aria-label="Invert colors"><svg class="i"><use href="#i-inv"/></svg></button>
+  <button class="ib" id="setb" aria-label="OpenRouter key"><svg class="i"><use href="#i-key"/></svg></button>
+</header>
+<section id="home"><div class="hw"><div class="mark">Z</div><h2>Your projects</h2><p>Open one, or start something new.</p><div class="hb"><button class="btn solid" id="newp2">New project</button><button class="btn" id="impb">Import</button><button class="btn" id="expall">Export all</button></div><input type="file" id="imp" accept=".json,application/json" multiple hidden><div id="hlist"></div></div></section>
+<main>
+  <section class="pane on" id="chat">
+    <div id="log"></div>
+    <div class="comp"><div class="modes" id="modes"><button data-m="auto">Auto</button><button data-m="discuss">Discuss</button><button data-m="build">Build</button></div><div id="thumbs"></div><textarea id="inp" placeholder="Describe what to build" rows="1"></textarea>
+      <div class="crow"><button class="ib" id="attb" aria-label="Attach image"><svg class="i"><use href="#i-img"/></svg></button><input type="file" id="fil" accept="image/*" multiple hidden><select id="model" aria-label="Free model"><option>Loading free models…</option></select><span class="sp"></span><button id="send" aria-label="Build"><svg class="i"><use href="#i-up"/></svg></button></div></div>
+  </section>
+  <section class="pane" id="codep">
+    <div class="fbar"><div id="files"></div><span id="st"></span><button class="ib" id="copy" aria-label="Copy code"><svg class="i"><use href="#i-cp"/></svg></button><button class="ib" id="dl" aria-label="Download file"><svg class="i"><use href="#i-dl"/></svg></button></div>
+    <textarea id="code" spellcheck="false" placeholder="Code appears here after your first build."></textarea>
+  </section>
+  <section class="pane" id="prev">
+    <div class="pbar"><button class="ib" id="run" aria-label="Reload preview"><svg class="i"><use href="#i-re"/></svg></button><div class="url">Live preview</div><button class="btn" id="conb" style="padding:6px 12px">Console</button><button class="ib" id="devb" aria-label="Toggle phone size"><svg class="i"><use href="#i-ph"/></svg></button></div>
+    <div id="stage"><div id="cons"><div class="ch"><b>Console</b><span class="sp"></span><button class="btn" id="csend">Send to AI</button><button class="btn" id="cclr">Clear</button></div><div id="clog"></div></div><div id="errb"><span id="errt"></span><button class="btn" id="fixb">Fix this</button><button id="errx" aria-label="Dismiss">×</button></div><iframe id="frame" sandbox="allow-scripts allow-modals allow-forms allow-popups" title="Preview"></iframe></div>
+  </section>
+</main>
+<nav class="tabbar"><button data-t="chat" class="on"><svg class="i"><use href="#i-chat"/></svg>Chat</button><button data-t="codep"><svg class="i"><use href="#i-code"/></svg>Code</button><button data-t="prev"><svg class="i"><use href="#i-eye"/></svg>Preview</button></nav>
+</div></div>
+<dialog id="dlg">
+  <h3>Settings</h3>
+  <label class="fl">OpenRouter key</label>
+  <p>Free models need a free key. It stays in this browser and is sent only to OpenRouter. Get one at <a href="https://openrouter.ai/keys" target="_blank" rel="noopener">openrouter.ai/keys</a>.</p>
+  <input id="key" type="password" placeholder="sk-or-..." autocomplete="off">
+  <label class="fl">Add a model</label>
+  <p>Paste any OpenRouter model ID, like <code>anthropic/claude-sonnet-4.5</code>. It shows up under My models.</p>
+  <div class="addm"><input id="mid" placeholder="provider/model-name" autocomplete="off" autocapitalize="off"><button class="btn" id="addm">Add</button></div>
+  <div id="cml"></div>
+  <label class="chk"><input type="checkbox" id="all"> Show every model, not just the powerful ones</label>
+  <label class="chk"><input type="checkbox" id="af"> Fix load errors automatically (up to 2 tries)</label>
+  <label class="chk"><input type="checkbox" id="plan"> Plan first for big requests</label>
+  <label class="fl">Custom instructions</label>
+  <textarea id="ci" placeholder="Example: Always use a dark theme. Keep replies short."></textarea>
+  <div class="row"><button class="btn" id="clr">Remove key</button><button class="btn" id="cancel">Close</button><button class="btn solid" id="save">Save</button></div>
+</dialog>
+<dialog id="ndlg"><h3 id="nt">Name your project</h3><input id="nin" placeholder="e.g. Habit tracker" maxlength="60" autocomplete="off"><div class="row"><button class="btn" id="ncancel">Cancel</button><button class="btn solid" id="ncreate">Save</button></div></dialog>
+<dialog id="vdlg"><h3>Version history</h3><p>Every build is saved. Tap one to preview it, then restore it.</p><iframe id="vframe" sandbox="allow-scripts" title="Version preview"></iframe><div id="vlist"></div><div class="row"><button class="btn" id="vclose">Close</button><button class="btn solid" id="vrest" disabled>Restore</button></div></dialog>
+<dialog id="mdlg"><h3>Project memory</h3><p>Notes the AI follows on every message in this project. Example: blue accent, big buttons, made for kids.</p><textarea id="mem" maxlength="2000" placeholder="What should the AI always remember?"></textarea><div class="row"><button class="btn" id="mcancel">Cancel</button><button class="btn solid" id="msave">Save</button></div></dialog>
+<div id="toast"></div>
+<script src="app.js"></script>
+</body>
+</html>
